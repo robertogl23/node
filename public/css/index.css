@@ -1,0 +1,50 @@
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    background-color: #19D4FF;
+}
+
+.panel-login{
+    background-color: #0BE8D6;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 450px;
+}
+.tabs{
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+.tab{
+    margin: 5px;
+    padding: 5px;
+    
+    
+}
+.en{
+    padding: 10px;
+    
+    
+}
+.en:hover{
+    color: aliceblue;
+    background-color: #0B84E8;
+    cursor: pointer;
+}
+
+h2{
+    color: black;
+}
+.login{
+    padding: 15px;
+}
+.campos{
+    display: flex;
+    justify-content: flex-start;
+}
