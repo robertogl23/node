@@ -8,17 +8,12 @@ let leerLogin = () => {
 
     if (usuario=== '' || contraseña === '') {
         console.log('Campos vacios');
-        //mostrarNotificacion('Campos vacios', 'error');
+
     } else {
-        
-        
-        //console.log("lleno");
+
         const data = new FormData();
         data.append('use', usuario);
         data.append('pass', contraseña);
- 
-        //console.log(...data);
-        //insertarBD(data);
         loginUsuario(data);
         
 
@@ -29,9 +24,7 @@ let leerLogin = () => {
     xhr.open('POST', 'http://localhost/servicios-web/login.php', true);
     xhr.onload = function() {
         if (this.status === 200) {
-            console.log(JSON.parse(xhr.responseText));
             const respuesta = JSON.parse(xhr.responseText);
-            console.log(respuesta);
         }
     }
     xhr.send(datos)
@@ -52,8 +45,6 @@ let saveUsuario = () => {
             dataRegistro.append('edad', edad);
             dataRegistro.append('mail', correo);
             dataRegistro.append('pass', con);
-     
-            //console.log(...dataRegistro);
             insertarBD(dataRegistro);
 
         }
@@ -66,11 +57,7 @@ let insertarBD = (datos) => {
     xhr.open('POST', 'http://localhost/servicios-web/insert.php', true);
     xhr.onload = function() {
         if (this.status === 200) {
-            //console.log(JSON.parse(xhr.responseText));
-            const respuesta = JSON.parse(xhr.responseText);
-             console.log(respuesta);
-            
-            // Después de 3 segundos redireccionar
+            const respuesta = JSON.parse(xhr.responseText);  
         }
     }
     xhr.send(datos)

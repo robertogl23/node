@@ -10,68 +10,9 @@
 </head>
 <body>
   <div class="container-principal">
-    <div class="panel-login">
-      <div class="header-panel">
-        <div class="tabs">
-          <div class="tab">
-            <a class="en" onclick="start('Login')">Login</a>
-          </div>
-           <div class="tab">
-            <a class="en" onclick="start('Sin-up')">Sin up</a>
-          </div>
-        </div>
-      </div>
-      <div class="body-panel">
-        <div id="Login" class="city">
-          <div class="login" align="center">
-            <h2>Bienvenido</h2>
-            <form action="#" id="#login">
-              <div class="campos">          
-                <div class="campo">
-                  <label for="">Usuario</label>
-                  <input type="text" id="usuario">
-                </div>
-                <div class="campo">
-                  <label for="">Contraseña</label>
-                  <input type="text" id="contraseña">
-                </div>                  
-              </div>  
-              <div class="btn">
-                <input type="submit" class="btn1" value="Entrar" onclick="leerLogin();">
-              </div>
-            </form>               
-          </div>     
-        </div>
-          <div id="Sin-up" class="city" style="display:none">
-            <div class="sinup" align="center">
-              <h2>Ingrese sus datos</h2>
-              <div class="campos">
-                <div class="campo">
-                  <label for="">Nombre</label>
-                  <input type="text" id="nombre">
-                </div>           
-                <div class="campo">
-                  <label for="">Edad</label>
-                  <input type="number" id="edad">
-                </div>
-              </div>
-              <div class="campos">
-                <div class="campo er">
-                  <label for="">Correo</label>
-                  <input type="text" id="correo">
-                </div>
-                <div class="campo er">
-                  <label for="">Contraseña</label>
-                  <input type="password" id="con">
-                </div>
-              </div>
-              <div class="btn">
-                <input type="submit" class="btn1" value="Entrar" onclick="saveUsuario();">
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
+    
+    {{> tabs }}
+
   </div>
 <script src="/js/index.js"></script>
 <script src="/js/app.js"></script>
