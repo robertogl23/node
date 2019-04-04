@@ -14,18 +14,31 @@ let leerLogin = () => {
         const data = new FormData();
         data.append('use', usuario);
         data.append('pass', contraseña);
-        loginUsuario(data);
+
+        loginUsuario(data,(err,respuesta) => {
+
+            if(err){
+                 return console.log(err);
+            }
+            console.log('respuesta del servidor', respuesta);
+
+        });
         
 
     }
 }
- let loginUsuario = (datos) => {
+ let loginUsuario = (datos, callback) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'http://localhost/servicios-web/login.php', true);
     xhr.onload = function() {
         if (this.status === 200) {
             const respuesta = JSON.parse(xhr.responseText);
+
+            callback(null,respuesta);
+        } else {
+            callback('error');
         }
+
     }
     xhr.send(datos)
 
