@@ -1,5 +1,3 @@
-
-
 let leerLogin = () => {
     
     const usuario = document.querySelector('#usuario').value,
@@ -15,28 +13,20 @@ let leerLogin = () => {
         data.append('use', usuario);
         data.append('pass', contraseña);
 
-        loginUsuario(data,(err,respuesta) => {
-
-            if(err){
-                 return console.log(err);
-            }
-            console.log('respuesta del servidor', respuesta);
-
-        });
+        loginUsuario(data) ;
         
-
     }
 }
- let loginUsuario = (datos, callback) => {
+ let loginUsuario = (datos) => {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'http://localhost/servicios-web/login.php', true);
     xhr.onload = function() {
         if (this.status === 200) {
             const respuesta = JSON.parse(xhr.responseText);
-
-            callback(null,respuesta);
+                console.log(respuesta);
         } else {
-            callback('error');
+
+            console.log("error servidor");
         }
 
     }
