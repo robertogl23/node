@@ -1,5 +1,5 @@
 let leerLogin = () => {
-    
+ 
     const usuario = document.querySelector('#usuario').value,
         contraseña = document.querySelector('#contraseña').value;
 
@@ -18,12 +18,13 @@ let leerLogin = () => {
     }
 }
  let loginUsuario = (datos) => {
+    
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'http://localhost/servicios-web/login.php', true);
     xhr.onload = function() {
         if (this.status === 200) {
             const respuesta = JSON.parse(xhr.responseText);
-                console.log(respuesta);
+            console.log(respuesta);
         } else {
 
             console.log("error servidor");
@@ -35,6 +36,7 @@ let leerLogin = () => {
  }
 
 let saveUsuario = () => {
+
     const nombre = document.querySelector('#nombre').value,
         edad = document.querySelector('#edad').value,
         correo = document.querySelector('#correo').value,
@@ -60,8 +62,12 @@ let insertarBD = (datos) => {
     xhr.open('POST', 'http://localhost/servicios-web/insert.php', true);
     xhr.onload = function() {
         if (this.status === 200) {
-            const respuesta = JSON.parse(xhr.responseText);  
+            const respuesta = JSON.parse(xhr.responseText); 
+            console.log(respuesta);
         }
     }
     xhr.send(datos)
+}
+let btn1 = () => {
+    window.location = 'login';
 }
