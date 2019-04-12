@@ -50,7 +50,7 @@ h2{
 }
 .campos{
     display:flex;
-   justify-content: space-around;
+    justify-content: space-around;
 
 }
 .sinup{
@@ -88,3 +88,15 @@ input[type=text],[type=number],[type=password] {
 .er{
     padding-left: 20px;
 }
+.en {
+    display:flex;
+    justify-content: space-around;
+
+}
+a{
+    text-decoration: none;
+}
+.navbar{
+    background-color: #1FB294;
+}
+
