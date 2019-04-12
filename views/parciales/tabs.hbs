@@ -1,4 +1,5 @@
 <div class="panel-login">
+  
     <div class="header-panel">
         <div class="tabs">
           <div class="tab">
@@ -11,24 +12,9 @@
       </div>
       <div class="body-panel">
         <div id="Login" class="city">
-          <div class="login" align="center">
-            <h2>Bienvenido</h2>
-            <form action="#" id="#login">
-              <div class="campos">          
-                <div class="campo">
-                  <label for="">Usuario</label>
-                  <input class="inp1" type="text" id="usuario">
-                </div>
-                <div class="campo">
-                  <label for="">Contraseña</label>
-                  <input  type="password" id="contraseña">
-                </div>                  
-              </div>  
-              <div class="btn">
-                <input type="submit" class="btn1" value="Entrar" onclick="leerLogin();">
-              </div>
-            </form>               
-          </div>     
+
+          {{> login }}
+
         </div>
           <div id="Sin-up" class="city" style="display:none">
             <div class="sinup" align="center">
