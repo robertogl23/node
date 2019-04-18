@@ -7,3 +7,9 @@ function start(datos) {
     }
     document.getElementById(datos).style.display = "block";  
   }
+
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js')
+  .then(reg => console.log("Registro",reg))
+  .catch(err=>console.log('Error',err))
+}
