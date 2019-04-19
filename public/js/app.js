@@ -1,3 +1,21 @@
+var params = new URLSearchParams(window.location.search);
+
+var socket = io();
+
+socket.on('connect', function() {
+  
+    console.log('Conectado con el servidor');
+
+  
+});
+
+socket.on('disconnect', function() {
+  
+    console.log('Perdimos conexion con el servidor');
+
+  
+});
+
 let leerLogin = () => {
  
     const usuario = document.querySelector('#usuario').value,
@@ -24,7 +42,9 @@ let leerLogin = () => {
     xhr.onload = function() {
         if (this.status === 200) {
             const respuesta = JSON.parse(xhr.responseText);
-            console.log(respuesta);
+            if(respuesta.respuesta === 'correcto'){
+                window.location.href = 'verbs';
+            }
         } else {
 
             console.log("error servidor");
@@ -42,17 +62,17 @@ let saveUsuario = () => {
         correo = document.querySelector('#correo').value,
         con = document.querySelector('#con').value;
 
-        if(nombre === '' || edad === '' || correo === '' || con === ''){
-            console.log("vacio");
-        }else{
-            const dataRegistro = new FormData();
-            dataRegistro.append('name', nombre);
-            dataRegistro.append('edad', edad);
-            dataRegistro.append('mail', correo);
-            dataRegistro.append('pass', con);
-            insertarBD(dataRegistro);
+    if(nombre === '' || edad === '' || correo === '' || con === ''){
+        console.log("vacio");
+    }else{
+        const dataRegistro = new FormData();
+        dataRegistro.append('name', nombre);
+        dataRegistro.append('edad', edad);
+        dataRegistro.append('mail', correo);
+        dataRegistro.append('pass', con);
+        insertarBD(dataRegistro);
 
-        }
+    }
 
 
 }

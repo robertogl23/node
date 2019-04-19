@@ -78,13 +78,13 @@ input[type=text],[type=number],[type=password] {
     
     box-sizing: border-box;
     border: 1.5px solid#46A7E8;
-    -webkit-transition: 0.5s;
+    -webkit-transition: 0.8s;
     transition: 1s;
     outline: none;
     margin: 5px;
     border-radius: 5px;
-    padding: 3.5px;
-    font-family: var(--font4);
+    padding: 5px;
+    font-family: var(--font2);
     
   }
   
@@ -106,7 +106,7 @@ input[type=text],[type=number],[type=password] {
     
 }
 .er{
-    padding-left: 20px;
+    padding-left: 25px !important;
 }
 .en {
     display:flex;
@@ -121,5 +121,8 @@ a{
 }
 .lo{
     margin-top: 50px;
+}
+.co{
+    padding-left: 15px;
 }
 

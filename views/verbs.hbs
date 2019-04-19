@@ -9,13 +9,19 @@
 <link type="text/css" rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <div class="container-principal">
+    <div class="cont">
+
+        <div class="header">
+            {{> nav }}
+        </div>
     
-        {{> tabs }}
+        
 
     </div>
-<script src="/js/index.js"></script>
+<script src="socket.io/socket.io.js"></script>
 <script src="/js/app.js"></script>
+<script src="/js/index.js"></script>
+
 </body>
 
 </html>
