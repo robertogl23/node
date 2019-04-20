@@ -16,17 +16,10 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
-let io = socketIO(server);
-io.on('connection', (client) => {
+module.exports.io = socketIO(server);
 
-    console.log('Usuario conectado');
+require('./socket.js');
 
-    client.on('disconnect', () => {
-
-        console.log('Usuario desconectado');
-    });
-
-});
 
 hbs.registerPartials(__dirname + '/views/parciales');
 
@@ -45,7 +38,7 @@ app.get('/verbs', (req, res) => {
 
 
 
-require('./sockets');
+require('./socket');
 
 server.listen(port, (err) => {
 

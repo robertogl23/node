@@ -1,10 +1,15 @@
+
+
 var params = new URLSearchParams(window.location.search);
 
 var socket = io();
 
+
 socket.on('connect', function() {
   
     console.log('Conectado con el servidor');
+
+    socket.emit('entrar', { usuario: 'Roberto'})
 
   
 });
@@ -15,6 +20,13 @@ socket.on('disconnect', function() {
 
   
 });
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  }
 
 let leerLogin = () => {
  
