@@ -38,7 +38,7 @@ app.get('/verbs', (req, res) => {
 
 
 
-require('./socket');
+
 
 server.listen(port, (err) => {
 
