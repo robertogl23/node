@@ -30,6 +30,12 @@ function onSignIn(googleUser) {
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
     console.log('Signed in as: ' + xhr.responseText);
+
+    if (this.status === 200){
+      console.log('correcto');
+      window.location.href = 'verbs';
+
+    }
   };
   xhr.send('idtoken=' + id_token);
 }

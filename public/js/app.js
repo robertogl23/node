@@ -9,7 +9,7 @@ socket.on('connect', function() {
   
     console.log('Conectado con el servidor');
 
-    socket.emit('entrar', { usuario: 'Roberto'})
+    socket.emit('entrar', { usuario: 'Rober'})
 
   
 });
