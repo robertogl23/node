@@ -58,9 +58,6 @@ async function verify( token ) {
     //const userid = payload['sub'];
     console.log(payload.name);
 
-    if(payload.name){
-        console.log(payload.email);
-    }
     
   }
   

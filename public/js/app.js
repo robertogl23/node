@@ -2,24 +2,7 @@
 
 var params = new URLSearchParams(window.location.search);
 
-var socket = io();
 
-
-socket.on('connect', function() {
-  
-    console.log('Conectado con el servidor');
-
-    socket.emit('entrar', { usuario: 'Rober'})
-
-  
-});
-
-socket.on('disconnect', function() {
-  
-    console.log('Perdimos conexion con el servidor');
-
-  
-});
 
 
 let leerLogin = () => {

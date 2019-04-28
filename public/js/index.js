@@ -33,7 +33,25 @@ function onSignIn(googleUser) {
 
     if (this.status === 200){
       console.log('correcto');
-      window.location.href = 'verbs';
+      //window.location.href = 'verbs';
+      var socket = io();
+
+
+socket.on('connect', function() {
+  
+    console.log('Conectado con el servidor');
+
+    socket.emit('entrar', { usuario: profile.getName()})
+
+  
+});
+
+socket.on('disconnect', function() {
+  
+    console.log('Perdimos conexion con el servidor');
+
+  
+});
 
     }
   };
