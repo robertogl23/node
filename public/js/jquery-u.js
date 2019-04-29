@@ -9,7 +9,7 @@ function renderUse( personas ){
 
     for( var i = 0; i < personas.length; i++){
 
-        html += '<h2 data-id="'+ personas[i].id+'">Usuarios '+ personas[i].nombre +'</h2>';
+        html += '<a data-id="'+ personas[i].id+'"><img src="'+personas[i].img+'">'+ personas[i].nombre +'</a>';
 
     }
 
