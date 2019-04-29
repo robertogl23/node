@@ -49,12 +49,23 @@ function onSignIn(googleUser) {
         console.log('Conectado con el servidor');
 
         socket.emit('entrar', use, function( resp ){
-          console.log('Usuarios conectados', resp);
+          //console.log('Usuarios conectados', resp);
+          renderUse(resp);
 
         });
 
         
       });
+
+      socket.on('crearMensaje', function(mensaje){
+        console.log('servidor:', mensaje);
+      });
+      socket.on('listaPersona', function(personas){
+        console.log( personas);
+        renderUse(personas);
+      });
+
+
 
       
     }else{
