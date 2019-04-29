@@ -125,4 +125,28 @@ a{
 .co{
     padding-left: 15px;
 }
+.cont-p{
+    width: 30rem;
+    background: #1FB294;
+    height: 25rem;
+    border: 1px solid rgba(0, 2, 1, 0.712);
+
+}
+.head-g{
+
+    height: 50px;
+    background-color: #46A7E8;
+    margin-top: -20px;
+
+    
+    
+}
+.t{
+    padding: 12px;
+}
+.game{
+    margin-top: 10px;
+}
+
+
 

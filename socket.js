@@ -1,9 +1,23 @@
-const {io} = require('./server');
+const { io } = require('./server');
+const { Usuarios } = require('./usuarios');
+
+const usuarios = new Usuarios();
 io.on('connection', (client) => {
 
-    client.on('entrar', (usuario) => {
+    client.on('entrar', (data, callback) => {
         
-        console.log(usuario);
+        if( !data.nombre){
+            return callback({
+                error: true,
+                mensaje: 'el nombre es necesario'
+            });
+        }
+
+        let personas = usuarios.agregarPersona(client.id, data.nombre,data.img,data.email);
+        
+        
+        callback(personas);
+        console.log(data);
     })
 
     client.on('disconnect', () => {

@@ -1,12 +1,12 @@
 
 function start(datos) {
-    var i;
-    var x = document.getElementsByClassName("city");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    document.getElementById(datos).style.display = "block";  
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
   }
+  document.getElementById(datos).style.display = "block";  
+}
 
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('./sw.js')
@@ -32,27 +32,39 @@ function onSignIn(googleUser) {
     console.log('Signed in as: ' + xhr.responseText);
 
     if (this.status === 200){
-      console.log('correcto');
+      //console.log('correcto');
       //window.location.href = 'verbs';
       var socket = io();
+      var use = {
+        id: profile.getId(),
+        nombre: profile.getName(),
+        img: profile.getImageUrl(),
+        email: profile.getEmail()
 
 
-socket.on('connect', function() {
-  
-    console.log('Conectado con el servidor');
+      };
 
-    socket.emit('entrar', { usuario: profile.getName()})
+      socket.on('connect', function() {
+        
+        console.log('Conectado con el servidor');
 
-  
-});
+        socket.emit('entrar', use, function( resp ){
+          console.log('Usuarios conectados', resp);
 
-socket.on('disconnect', function() {
-  
-    console.log('Perdimos conexion con el servidor');
+        });
 
-  
-});
+        
+      });
 
+      
+    }else{
+      
+      socket.on('disconnect', function() {
+        
+        console.log('Perdimos conexion con el servidor');
+
+        
+      });
     }
   };
   xhr.send('idtoken=' + id_token);
@@ -64,6 +76,7 @@ function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
     console.log('User signed out.');
+
   });
 }
 
