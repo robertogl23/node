@@ -151,7 +151,6 @@ a{
     width: 250px;
     height: 300px;
     padding: 5px;
-    background-color: rgba(86, 146, 187, 0.582);
     position: fixed;
     overflow: auto;
     
@@ -182,5 +181,18 @@ a{
       size: 5px;
       border-radius: 50%;
   }
+  .na{
+    margin-top: -8px;
+    padding: 8px;
+  }
+.co1{
+    padding: 8px;
+    background-color: rgba(86, 146, 187, 0.582);
+    transition: 1s;
 
+}
+.co1:hover{
+    transition: 1.6s;
+    background-color: rgba(97, 124, 143, 0.616);
+}
 
