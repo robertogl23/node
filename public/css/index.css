@@ -147,6 +147,40 @@ a{
 .game{
     margin-top: 10px;
 }
-
+.use-d{
+    width: 250px;
+    height: 300px;
+    padding: 5px;
+    background-color: rgba(86, 146, 187, 0.582);
+    position: fixed;
+    overflow: auto;
+    
+}
+/* width */
+.use-d::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .use-d::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 4px;
+  }
+   
+  /* Handle */
+  .use-d::-webkit-scrollbar-thumb {
+    background: rgb(1, 23, 36); 
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  .use-d::-webkit-scrollbar-thumb:hover {
+    background: #004eb3; 
+  }
+  img{
+      scale: 10px;
+      size: 5px;
+      border-radius: 50%;
+  }
 
 
