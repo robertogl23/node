@@ -1,7 +1,7 @@
 var use = $('#usuarios');
 
 function renderUse( personas ){
-
+    $( ".use-d" ).show();
     //console.log(personas);
     var html = '';
     
@@ -22,7 +22,7 @@ function renderUse( personas ){
 
     }
 
-
+    
 
     use.html(html);
 

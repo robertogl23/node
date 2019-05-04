@@ -16,10 +16,7 @@ if('serviceWorker' in navigator){
 
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); 
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail());
+ 
 
   var id_token = googleUser.getAuthResponse().id_token;
 
@@ -29,7 +26,7 @@ function onSignIn(googleUser) {
     xhr.open('POST', '/google');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
-    console.log('Signed in as: ' + xhr.responseText);
+    //console.log('Signed in as: ' + xhr.responseText);
 
     if (this.status === 200){
       //console.log('correcto');
@@ -61,7 +58,7 @@ function onSignIn(googleUser) {
         console.log('servidor:', mensaje);
       });
       socket.on('listaPersona', function(personas){
-        console.log( personas);
+        console.log(personas);
         renderUse(personas);
       });
 
@@ -84,11 +81,12 @@ function onSignIn(googleUser) {
 
 
 function signOut() {
- 
+  var socket = io();
+
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
     console.log('User signed out.');
-    
+    $( ".use-d" ).hide();
 
   });
 }
